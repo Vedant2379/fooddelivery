@@ -14,6 +14,7 @@ import MyProfile from './MyProfile'
 import MyCart from './MyCart'
 import ProtectedRoute from './ProtectedRoute'
 import { useSelector } from 'react-redux'
+import OrderDetails from './OrderDetails'
 
 function MyRoutes() {
   const { isLogedin } = useSelector((state) => state.user)
@@ -21,7 +22,7 @@ function MyRoutes() {
   return (
     <div>
         <Router>
-            <MyNavBar/>
+            <MyNavBar/>=
             <Routes>
                 <Route path='/' element={<Home/>} />
                 <Route path='/about' element={<About/>} />
@@ -31,6 +32,7 @@ function MyRoutes() {
                 <Route path='/addcustomers' element={<MyFormCustomer/>} />
                 {/* <Route path='/addorders' element={<MyFormOrder/>} /> */}
                 <Route path='/logins' element={<MyFormLogin/>} />
+                <Route path='/orderdetails/:orderid' element={<OrderDetails/>} />
                 <Route path='/ordershistory' element={
                   <ProtectedRoute isSignin={isLogedin}>
                       <MyOrdersHistory/>

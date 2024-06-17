@@ -1,0 +1,53 @@
+  .login-form-container {
+    display: flex;
+    background-image: url("./images/loginback3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+  }
+  
+  .login-form label {
+    font-weight: bold;
+  }
+  
+  .login-form .form-control {
+    margin-bottom: 20px; 
+  }
+  
+  .login-form .btn {
+    width: 100%;
+  }
+
+  .login-form p{
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .loginform-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+  }
+
+  .login-form-container .submit-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 80px;
+    cursor: pointer;
+    margin-left: 100;
+    align-items: center;
+  }

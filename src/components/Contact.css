@@ -1,0 +1,43 @@
+  .contact-page {
+    padding: 50px 0;
+    background-image: url("../images/loginback3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92vh;
+    width: 100vw;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .contact-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 50%;
+  }
+  
+  .contact-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .submit-btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 80px;
+    cursor: pointer;
+    margin-left: 100;
+  }

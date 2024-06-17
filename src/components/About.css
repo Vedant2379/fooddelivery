@@ -1,0 +1,26 @@
+.about-us {
+    padding: 50px 0;
+    background-image: url("../images/loginback3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 92vh;
+    width: 100vw;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
