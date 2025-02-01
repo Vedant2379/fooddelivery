@@ -19,7 +19,7 @@ const cartSlice = createSlice({
             const newItem = { ...action.payload, qty: 1 }
             state.CartItems = [...state.CartItems, newItem]
             state.ItemCount = state.CartItems.length
-        },
+        }, 
 
         increQty: (state, { payload }) => {
             const crtItem = state.CartItems.find((item) => item._id === payload.iid)

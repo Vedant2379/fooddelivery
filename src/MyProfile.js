@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './MyFormLogin.css'
 import axios from 'axios';
+import { login } from './reduxwork/UserSlice'
 
 function MyProfile() {
 
@@ -24,7 +25,7 @@ function MyProfile() {
             .then((result) => {
                 if (result.data.success) {
                     // alert("Login Successful")
-                    // dispatcher(login(result.data.data))
+                    dispatcher(login(result.data.data))
                     console.log(result.data)
                 } else {
                     alert("Incorrect customer id")

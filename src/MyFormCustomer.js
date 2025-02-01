@@ -111,7 +111,7 @@ function MyFormCustomer() {
             .catch((err) => {
                 console.log(err)
             })
-    }
+    } 
 
     return (
         <div className='signup-container'>

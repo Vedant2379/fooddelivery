@@ -10,7 +10,7 @@ import {
     PAUSE,
     PERSIST,
     PURGE,
-    REGISTER,
+    REGISTER, 
 } from "redux-persist";
 
 import storage from "redux-persist/lib/storage";

@@ -26,7 +26,6 @@ function Contact() {
             .then((result) => {
                 alert("Message sent")
                 console.log(result.data)
-                
             })
             .catch((err) => {
                 console.log(err)

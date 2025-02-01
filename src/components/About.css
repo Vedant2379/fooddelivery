@@ -2,7 +2,7 @@
     padding: 50px 0;
     background-image: url("../images/loginback3.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     height: 92vh;
     width: 100vw;
   }

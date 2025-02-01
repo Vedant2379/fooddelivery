@@ -106,7 +106,7 @@ function MyNavBar() {
               <Link to="/profiles" className="nav-link">My Profile</Link>
             </Nav.Link> : null}
             {isLogedin ? <Button variant="primary" onClick={() => handleLogout() }>Log Out</Button>
-          : null
+              : null
             }
         </Nav>
       </Navbar.Collapse>

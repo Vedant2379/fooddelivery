@@ -26,7 +26,7 @@ function MyCart() {
   const dispatcher = useDispatch()
 
   console.log("DATA", UserData)
-  dispatcher(calculateTotal()) 
+  dispatcher(calculateTotal())
 
   async function showRazorpay() {
     const res = await loadScript(
@@ -51,7 +51,7 @@ function MyCart() {
       currency: data.currency,
       amount: data?.amount?.toString(),
       order_id: data.id,
-      name: "Book Car",
+      name: "order food",
       description: "Thank you",
       // image: "http://localhost:1337/logo.svg",
       handler: function (response) {
@@ -63,7 +63,7 @@ function MyCart() {
       },
       prefill: {
         name: "Rajat",
-        email: "rajat@rajat.com",
+        email: "rajat@gmail.com",
         phone_number: "9999999999",
       },
     };
@@ -114,7 +114,7 @@ function MyCart() {
                 <span>{food.qty}</span>
                 <Button onClick={() => { dispatcher(decreQty({ iid: food._id })) }}>-</Button>
               </Card.Footer>
-            </Card>
+            </Card> 
           </Col>
         ))}
       </Row>

@@ -5,7 +5,7 @@ const initialState = {
     UserData: {},
     isRegistered: false,
     isLogedin: false
-}
+} 
 
 const UserSlice = createSlice({
     name: "user",
@@ -14,7 +14,7 @@ const UserSlice = createSlice({
         logout: (state) => {
             state.UserData = {};
             state.isLogedin = false;
-        },
+        }, 
 
         register: (state, action) => {
             state.UserData = action.payload;
