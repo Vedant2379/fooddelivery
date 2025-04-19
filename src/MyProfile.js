@@ -21,7 +21,10 @@ function MyProfile() {
             custid: UserData._id,
             CustomerPassword: customerPassword
         }
-        axios.post("http://localhost:5000/api/updatecustomer", log)
+
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.post("http://localhost:5000/api/updatecustomer", log)
+        axios.post(`${API_BASE_URL}/api/updatecustomer`, log)
             .then((result) => {
                 if (result.data.success) {
                     // alert("Login Successful")

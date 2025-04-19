@@ -42,7 +42,9 @@ function MyCart() {
     //   method: "POST",
     // }).then((t) => t.json());
 
-    const { data } = await axios.post("http://localhost:5000/razorpay", { amt: CartTotalAmt })
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+    // const { data } = await axios.post("http://localhost:5000/razorpay", { amt: CartTotalAmt })
+    const { data } = await axios.post(`${API_BASE_URL}/razorpay`, { amt: CartTotalAmt })
 
     console.log(data);
 
@@ -86,7 +88,10 @@ function MyCart() {
       OrderItems: finalItems,
       UserId: UserData._id
     }
-    axios.post("http://localhost:5000/api/addorder", order)
+
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+    // axios.post("http://localhost:5000/api/addorder", order)
+    axios.post(`${API_BASE_URL}/api/addorder`,order)
       .then((result) => {
         alert("Order placed")
         console.log(result.data)

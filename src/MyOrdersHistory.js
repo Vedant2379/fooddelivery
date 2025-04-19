@@ -69,7 +69,10 @@ function MyOrdersHistory() {
     let data = {
       cid: UserData._id
     }
-    axios.post('http://localhost:5000/api/getorderbyCustid', data)
+
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+    // axios.post('http://localhost:5000/api/getorderbyCustid', data)
+    axios.post(`${API_BASE_URL}/api/getorderbyCustid`, data)
       .then((result) => {
         setorderData(result.data)
       }).catch((err) => {

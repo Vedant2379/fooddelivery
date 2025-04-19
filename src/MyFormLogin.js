@@ -82,7 +82,10 @@ function MyFormLogin() {
             CustomerEmail: customerEmail,
             CustomerPassword: customerPassword
         }
-        axios.post("http://localhost:5000/api/login", log)
+
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.post("http://localhost:5000/api/login", log)
+        axios.post(`${API_BASE_URL}/api/login`, log)
             .then((result) => {
                 if (result.data.success) {
                     // alert("Login Successful")

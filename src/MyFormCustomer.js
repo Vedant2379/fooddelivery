@@ -102,7 +102,10 @@ function MyFormCustomer() {
             CustomerAddress: customerAddress,
             CustomerMob: Number(customerMob)
         }
-        axios.post("http://localhost:5000/api/addcustomer", customer)
+
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.post("http://localhost:5000/api/addcustomer", customer)
+        axios.post(`${API_BASE_URL}/api/addcustomer`, customer)
             .then((result) => {
                 alert("customer Added")
                 console.log(result.data)

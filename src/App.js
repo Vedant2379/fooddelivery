@@ -6,9 +6,10 @@ import MyRoutes from './MyRoutes';
 function App() {
   return (
     <div>
-        <MyRoutes/>
+        <MyRoutes/> 
     </div>
-  );
+  ); 
 }
 
 export default App;
+ 

@@ -67,7 +67,9 @@ function Home() {
   const { UserData } = useSelector((state) => state.user)
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/topavgrating')
+    // axios.get('http://localhost:5000/api/topavgrating')
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+    axios.get(`${API_BASE_URL}/api/topavgrating`)
       .then((result) => {
         setFoodData(result.data.topReviews)
       }).catch((err) => {

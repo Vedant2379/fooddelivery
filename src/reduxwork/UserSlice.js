@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Action } from "@remix-run/router";
 
 const initialState = {
-    UserData: {},
+    UserData: {}, 
     isRegistered: false,
     isLogedin: false
 } 

@@ -71,7 +71,10 @@ const OrderDetails = () => {
         const data = {
             oid: orderid
         }
-        axios.post('http://localhost:5000/api/getorderbyid', data)
+
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        // axios.post('http://localhost:5000/api/getorderbyid', data)
+        axios.post(`${API_BASE_URL}/api/getorderbyid`, data)
             .then((result) => {
                 setorderDetails({ ...result.data })
                 console.log("DATA", result.data)

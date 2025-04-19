@@ -22,7 +22,9 @@ function Contact() {
             SenderEmail: senderEmail,
             SenderMessage: senderMessage
         }
-        axios.post("http://localhost:5000/api/sendmessage", message)
+        // axios.post("http://localhost:5000/api/sendmessage", message)
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+        axios.post(`${API_BASE_URL}/api/sendmessage`,message)
             .then((result) => {
                 alert("Message sent")
                 console.log(result.data)
