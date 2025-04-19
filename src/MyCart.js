@@ -28,6 +28,8 @@ function MyCart() {
   console.log("DATA", UserData)
   dispatcher(calculateTotal())
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   async function showRazorpay() {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -42,7 +44,6 @@ function MyCart() {
     //   method: "POST",
     // }).then((t) => t.json());
 
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     // const { data } = await axios.post("http://localhost:5000/razorpay", { amt: CartTotalAmt })
     const { data } = await axios.post(`${API_BASE_URL}/razorpay`, { amt: CartTotalAmt })
 
@@ -89,7 +90,7 @@ function MyCart() {
       UserId: UserData._id
     }
 
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+    
     // axios.post("http://localhost:5000/api/addorder", order)
     axios.post(`${API_BASE_URL}/api/addorder`,order)
       .then((result) => {
@@ -109,7 +110,8 @@ function MyCart() {
         {CartItems.map((food) => (
           <Col lg={3} sm={12} md={6} key={food._id}>
             <Card className="food-card">
-              <Card.Img className='food-image' src={`http://localhost:5000${food.FoodImage}`} />
+              {/* <Card.Img className='food-image' src={`http://localhost:5000${food.FoodImage}`} /> */}
+              <Card.Img className='food-image' src={`${API_BASE_URL}${food.FoodImage}`} />
               <Card.Body>
                 <p className="food-name">Food: {food.FoodName}</p>
                 <p className="food-price">Price: {food.FoodPrice}</p>

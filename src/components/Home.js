@@ -66,9 +66,10 @@ function Home() {
   const dispatcher = useDispatch();
   const { UserData } = useSelector((state) => state.user)
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     // axios.get('http://localhost:5000/api/topavgrating')
-    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
     axios.get(`${API_BASE_URL}/api/topavgrating`)
       .then((result) => {
         setFoodData(result.data.topReviews)
@@ -90,7 +91,8 @@ function Home() {
         Comment: review.comment,
         Rating: review.rating
       }
-      axios.post('http://localhost:5000/api/createreview', data)
+      // axios.post('http://localhost:5000/api/createreview', data)
+      axios.post(`${API_BASE_URL}/api/createreview`, data)
         .then(() => {
           setShowModal(false)
           setReview({ rating: 0, comment: '' }) // Reset review state
@@ -119,7 +121,8 @@ function Home() {
               return (
                 <Col lg={3} sm={6} md={4} key={food._id._id}>
                   <Card className="food-card">
-                  <Card.Img className='food-image' src={`http://localhost:5000${food._id.FoodImage}`} />
+                  {/* <Card.Img className='food-image' src={`http://localhost:5000${food._id.FoodImage}`} /> */}
+                  <Card.Img className='food-image' src={`${API_BASE_URL}${food._id.FoodImage}`} />
                     <Card.Body>
                       <h5 className="food-name">{food._id.FoodName}</h5>
                       <p className="food-info">{food._id.FoodType}</p>

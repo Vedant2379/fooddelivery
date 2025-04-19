@@ -67,12 +67,14 @@ const OrderDetails = () => {
     const { orderid } = useParams()
     const [orderDetails, setorderDetails] = useState({})
 
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
     useEffect(() => {
         const data = {
             oid: orderid
         }
 
-        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
         // axios.post('http://localhost:5000/api/getorderbyid', data)
         axios.post(`${API_BASE_URL}/api/getorderbyid`, data)
             .then((result) => {
@@ -99,7 +101,8 @@ const OrderDetails = () => {
                             return (
                                 <Col key={index}>
                                     <Card className="food-card">
-                                        <Card.Img className='food-image' src={`http://localhost:5000${food.FoodId.FoodImage}`} />
+                                        {/* <Card.Img className='food-image' src={`http://localhost:5000${food.FoodId.FoodImage}`} /> */}
+                                        <Card.Img className='food-image' src={`${API_BASE_URL}${food.FoodId.FoodImage}`} />
                                         <Card.Body>
                                             <h5>{food.FoodId.FoodName}</h5>
                                             <h5>Price: {food.FoodId.FoodPrice}</h5>
