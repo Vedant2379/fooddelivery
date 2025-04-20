@@ -97,7 +97,7 @@ function MyFormCustomer() {
     function addCustomer() {
         const customer = {
             CustomerName: customerName,
-            CustomerEmail: customerEmail,
+            CustomerEmail: customerEmail, 
             CustomerPassword: customerPassword,
             CustomerAddress: customerAddress,
             CustomerMob: Number(customerMob)
@@ -107,9 +107,10 @@ function MyFormCustomer() {
         // axios.post("http://localhost:5000/api/addcustomer", customer)
         axios.post(`${API_BASE_URL}/api/addcustomer`, customer)
             .then((result) => {
-                alert("customer Added")
+                // alert("customer Added")
                 console.log(result.data)
                 dispatcher(register(result.data))
+                navi('/logins')
             })
             .catch((err) => {
                 console.log(err)

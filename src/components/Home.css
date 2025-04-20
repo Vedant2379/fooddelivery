@@ -1,11 +1,12 @@
 .food-display {
-    padding: 50px 0;
-    background-image: url("../images/loginback3.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 92vh;
-    width: 100vw;
-  }
+  padding: 50px 0;
+  background-image: url("../images/loginback3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh; /* ensures it fills full height */
+  width: 100%;
+}
   
   .food-display-list {
     max-width: 1200px;
